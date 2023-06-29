@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home - Library Web App</title>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+    <h1>Welcome to the Library Web App</h1>
+    <p>Signed in as {{user}}</p>
+    <a href="/signout">Sign Out</a>
+    <form action="/borrow" method="post">
+        <h2>Books:</h2>
+        {{#each books}}
+            <input type="checkbox" id="{{this.id}}" name="{{this.id}}">
+            <label for="{{this.id}}">{{this.title}}</label><br>
+        {{/each}}
+        <input type="submit" value="Borrow">
+    </form>
+</body>
+</html>
